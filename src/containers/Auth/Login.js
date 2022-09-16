@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
 import './Login.scss'
+import { handleLoginApi } from '../../services/userService'
 
 import * as actions from "../../store/actions";
 
@@ -11,8 +12,9 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            isShowPassword: 'false',
-            checkBox: 'false'
+            isShowPassword: true,
+            checkBox: false,
+            errMessage: ''
         }
     }
 
@@ -27,8 +29,32 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = () => {
-        console.log('all state: ', this.state)
+    handleLogin = async () => {
+        this.setState({
+            errMessage: ''
+        })
+
+        try {
+            let data = await handleLoginApi(this.state.username, this.state.password)
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errMessage: data.message
+                })
+            }
+
+            if (data && data.errCode === 0) {
+                this.props.userLoginSuccess(data.user)
+                console.log('Login succeeds')
+            }
+        } catch (e) {
+            if (e.response) {
+                if (e.response.data) {
+                    this.setState({
+                        errMessage: e.response.data.message
+                    })
+                }
+            }
+        }
     }
     handleShowHidePassword = () => {
         this.setState({
@@ -56,6 +82,9 @@ class Login extends Component {
                     />
                     <label className="form-label" htmlFor="password">Password</label>
                 </div>
+                <div className='col-12'>
+                    <span className='error-message'>{this.state.errMessage}</span>
+                </div>
                 <div className="col-7">
                     <div className="form-check">
                         <input className="form-check-input"
@@ -70,7 +99,7 @@ class Login extends Component {
                         <a href="#!">Forgot password?</a>
                     </div>
                     <button type="button" className="btn btn-primary btn-block mb-4 w-35 col-4 btn-signin"
-                        onClick={() => this.handleSubmit()}
+                        onClick={() => this.handleLogin()}
                     >
                         Sign in
                     </button>
@@ -100,15 +129,16 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        lang: state.app.language
+        language: state.app.language
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
-        adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
-        adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo))
+        // adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
+        // adminLoginFail: () => dispatch(actions.adminLoginFail()),
     };
 };
 

@@ -41,7 +41,7 @@ class App extends Component {
 
     render() {
         return (
-            <Fragment>
+            <>
                 <Router history={history}>
                     <div className="main-container">
                         <ConfirmModal />
@@ -63,7 +63,7 @@ class App extends Component {
                         />
                     </div>
                 </Router>
-            </Fragment>
+            </>
         )
     }
 }
@@ -71,7 +71,7 @@ class App extends Component {
 const mapStateToProps = state => {
     return {
         started: state.app.started,
-        isLoggedIn: state.admin.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn
     };
 };
 
