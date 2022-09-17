@@ -5,6 +5,7 @@ import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './Header.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Header extends Component {
 
@@ -20,7 +21,7 @@ class Header extends Component {
 
                 {/* nút logout */}
                 <div className="btn btn-logout" onClick={processLogout}>
-                    <i className="fas fa-sign-out-alt"></i>
+                    <FontAwesomeIcon icon="right-from-bracket" className='icon' />
                 </div>
             </div>
         );
