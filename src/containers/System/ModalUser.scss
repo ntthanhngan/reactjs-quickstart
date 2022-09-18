@@ -1,0 +1,38 @@
+
+.modal-user-container{
+display: flex;
+flex-direction: column;
+
+    .modal-user-item{
+        display: flex;
+        
+        .input-user{
+            width: 100%;
+            margin-right: 10px;
+            input{
+                width: 100%;
+                outline: none;
+                padding-left: 10px;
+                height: 30px;
+                border-radius: 3px;
+                border: solid 1px grey;
+            }
+            label{
+                margin: 5px auto;
+                font-size: 15px;
+                color: rgb(102, 95, 95);
+            }
+        }
+    }
+}
+
+.btn{
+    height: 35px;
+}
+.close{
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 5px;
+}

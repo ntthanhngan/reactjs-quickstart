@@ -6,7 +6,7 @@ import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faPen, faTrash, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faPen, faTrash, faRightFromBracket, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
@@ -21,7 +21,7 @@ import System from '../routes/System';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import ConfirmModal from '../components/ConfirmModal';
 
-library.add(faPen, faTrash, faRightFromBracket);
+library.add(faPen, faTrash, faRightFromBracket, faPlus);
 
 class App extends Component {
 
