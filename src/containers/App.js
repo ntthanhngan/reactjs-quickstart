@@ -6,7 +6,12 @@ import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faPen, faTrash, faRightFromBracket, faPlus } from '@fortawesome/free-solid-svg-icons'
+import {
+    faPen, faTrash, faRightFromBracket,
+    faPlus, faEnvelope, faPhone, faMagnifyingGlass,
+    faHeart, faCartShopping, faBars, faUser, faSearch
+} from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
@@ -19,9 +24,13 @@ import Header from './Header/Header';
 import System from '../routes/System';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
-import ConfirmModal from '../components/ConfirmModal';
+import HomePage from './HomePage/HomePage'
 
-library.add(faPen, faTrash, faRightFromBracket, faPlus);
+library.add(
+    faPen, faTrash, faRightFromBracket, faPlus,
+    faEnvelope, faPhone, faHeart, faCartShopping,
+    faFacebook, faTwitter, faMagnifyingGlass, faBars, faUser, faSearch
+);
 
 class App extends Component {
 
@@ -48,7 +57,6 @@ class App extends Component {
             <>
                 <Router history={history}>
                     <div className="main-container">
-                        <ConfirmModal />
                         {this.props.isLoggedIn && <Header />}
 
                         <span className="content-container">
@@ -56,6 +64,7 @@ class App extends Component {
                                 <Route path={path.HOME} exact component={(Home)} />
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
+                                <Route path={path.HOMEPAGE} component={HomePage} />
                             </Switch>
                         </span>
 

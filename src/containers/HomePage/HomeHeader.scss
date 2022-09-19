@@ -1,0 +1,130 @@
+
+.header-container{
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+
+    .header-top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 25px;
+        margin: 5px 10px 10px;
+        font-size: 13px;
+        z-index: 99;
+
+        .phoneNo-shop{
+            .phone-icon{
+                margin-right: 5px;
+            }
+        }
+
+        .social-media{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: inherit;
+            width: 130px;
+
+            .social-media-icon{
+                display: flex;
+                justify-content: space-between;
+                height: inherit;
+                align-items: center;
+                width: 50px;
+                font-size: 17px;
+            }
+        }
+    }
+
+    .main-header{
+        color: rgb(20, 20, 20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        margin: auto 20px;
+
+        .logo-shop{
+            img{
+                margin: 10px auto;
+            }
+        }
+
+        .menu-header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 60%;
+
+            .items{
+                border: none;
+                background-color: transparent;
+                font-weight: bold;
+
+                :hover{
+                    color: rgb(48, 247, 75);
+                }
+            }
+        }
+
+        .cart-shopping{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            width: 150px;
+            font-size: larg;
+
+            button{
+                border: none;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .header-bottom{
+        color: rgb(22, 22, 22);
+        display: flex;
+        flex-direction: row;
+        justify-content: inherit;
+        height: 100vh;  
+
+        .side-bar{
+            margin-left: 20px;
+
+            .title-side{
+                .bars-icon{
+                    margin-right: 10px;
+                    margin-top: 0;
+                }
+            }
+            .sb-items{
+                width: 176%;
+                background-color: rgb(235, 235, 235);
+                border-bottom: 1px solid rgb(209, 208, 208);
+                height: 40px;
+                padding-left: 30px;
+                padding-top: 8px;
+
+                &.title-side{
+                    background-color: rgb(236, 181, 29);
+                    color: white;
+                }
+            }
+        }
+
+        .banner{
+        background-image: url('../..//assets/images/banner-1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 76%!important;
+        height: 70vh;
+        margin-right: 20px ;
+    }
+    }
+
+    
+}
