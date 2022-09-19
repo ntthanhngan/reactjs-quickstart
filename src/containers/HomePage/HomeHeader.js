@@ -3,31 +3,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import logo from '../../assets/images/logo.jpg'
-import SearchBarModal from './SearchBarModal';
+import { FormattedMessage } from 'react-intl';
+import flagVN from '../../assets/images/vietnam-flag-icon.png'
+import flagEN from '../../assets/images/usa-flag-icon.png'
+import { LANGUAGES } from '../../utils';
+import { changeLanguageApp } from '../../store/actions';
 
 class HomeHeader extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            isOpenSearchModal: false
-        }
+    changeLanguage = (language) => {
+        this.props.changeLanguageAppRedux(language)
     }
-
-    handleSearch = () => {
-        this.setState({
-            isOpenSearchModal: true
-        })
-        console.log('check modal state: ', this.state.isOpenSearchModal)
-    }
-
-    toggleSearch = () => {
-        this.setState({
-            isOpenSearchModal: !this.state.isOpenSearchModal
-        })
-    }
-
     render() {
+        let language = this.props.language
+        console.log('check props', this.props)
         return (
             <div className='header-container'>
                 <div className='header-top'>
@@ -35,14 +24,27 @@ class HomeHeader extends Component {
                         <FontAwesomeIcon icon='phone' className='phone-icon' />
                         <span>09080706543 - 19001080 (CSKH)</span>
                     </div>
-                    <div className='free-shipping'>Miễn phí vận chuyển cho đơn hàng đầu tiên</div>
+                    <div className='free-shipping'>
+                        <FormattedMessage id="homeheadertop.topads" />
+                    </div>
                     <div className='social-media'>
                         <div className='social-media-icon'>
                             <FontAwesomeIcon icon='fa-brands fa-facebook' />
                             <FontAwesomeIcon icon='fa-brands fa-twitter' />
                         </div>
-                        <div className='language-switch'>
-                            <span>Việt Nam</span>
+                        <div className="language-switch">
+                            <span type="button"
+
+                                onClick={() => this.changeLanguage(LANGUAGES.VI)}
+                            >
+                                <img src={flagVN} alt='' className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} />
+                            </span>
+                            <span type="button"
+
+                                onClick={() => this.changeLanguage(LANGUAGES.EN)}
+                            >
+                                <img src={flagEN} alt='' className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} />
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -52,22 +54,34 @@ class HomeHeader extends Component {
                     </div>
                     <div className='menu-header'>
                         <div className='menu-items'>
-                            <button className='items'>Trang chủ</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.home" />
+                            </button>
                         </div>
                         <div className='menu-items'>
-                            <button className='items'>Sữa cho bé</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.babymilk" />
+                            </button>
                         </div>
                         <div className='menu-items'>
-                            <button className='items'>Bài viết</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.diaper" />
+                            </button>
                         </div>
                         <div className='menu-items'>
-                            <button className='items'>Tã &amp; Bỉm</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.nutritionalfood" />
+                            </button>
                         </div>
                         <div className='menu-items'>
-                            <button className='items'>Thực phẩm dinh dưỡng</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.accessories" />
+                            </button>
                         </div>
                         <div className='menu-items'>
-                            <button className='items'>Đồ dùng cho mẹ &amp; bé</button>
+                            <button className='items'>
+                                <FormattedMessage id="homeheader.blog" />
+                            </button>
                         </div>
                     </div>
                     <div className='cart-shopping'>
@@ -76,10 +90,6 @@ class HomeHeader extends Component {
                                 <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                             </button>
                         </div>
-                        <SearchBarModal
-                            isOpen={this.state.isOpenSearchModal}
-                            toggleSearch={this.toggleSearch}
-                        />
 
                         <div className='favourite'>
                             <button>
@@ -102,11 +112,17 @@ class HomeHeader extends Component {
                     <div className='side-bar'>
                         <div className='title-side sb-items'>
                             <FontAwesomeIcon icon='bars' className='bars-icon' />
-                            <span>Danh mục</span>
+                            <span><FormattedMessage id="homesidebar.menu" /></span>
                         </div>
-                        <div className='sb-items'>Thương hiệu</div>
-                        <div className='sb-items'>Sản phẩm bán chạy</div>
-                        <div className='sb-items'>Tìm kiếm sản phẩm</div>
+                        <div className='sb-items'>
+                            <FormattedMessage id="homesidebar.buybybrands" />
+                        </div>
+                        <div className='sb-items'>
+                            <FormattedMessage id="homesidebar.bestseller" />
+                        </div>
+                        <div className='sb-items'>
+                            <FormattedMessage id="homesidebar.search" />
+                        </div>
                     </div>
                     <div className='banner'>
 
@@ -127,6 +143,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
 };
 

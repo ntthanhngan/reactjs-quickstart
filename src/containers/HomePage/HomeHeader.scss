@@ -1,6 +1,6 @@
 
 .header-container{
-    background-color: grey;
+    background-color: #000;
     display: flex;
     flex-direction: column;
     font-size: larger;
@@ -26,7 +26,7 @@
             align-items: center;
             justify-content: space-between;
             height: inherit;
-            width: 130px;
+            width: 135px;
 
             .social-media-icon{
                 display: flex;
@@ -35,6 +35,36 @@
                 align-items: center;
                 width: 50px;
                 font-size: 17px;
+                height: inherit;
+                margin-right: 10px;
+            }
+
+            .language-switch{
+                display: flex;
+                align-items: revert;
+                height: inherit;
+                border-left: 1px solid #242424;
+                text-align: center;
+
+                span{
+                    margin-left: 10px;
+                    
+                    .dropdown-toggle{
+                        ::after{
+                            vertical-align: 0.1em;
+                        }
+                    }
+                    img{
+                        height: 16px;
+                        width: 25px;
+                        opacity: 0.6;
+
+                        &.active{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
             }
         }
     }
@@ -102,7 +132,7 @@
                 }
             }
             .sb-items{
-                width: 176%;
+                width: 288px;
                 background-color: rgb(235, 235, 235);
                 border-bottom: 1px solid rgb(209, 208, 208);
                 height: 40px;

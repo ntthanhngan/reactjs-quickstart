@@ -1,4 +1,21 @@
 {
+    "homeheader": {
+        "home": "Trang chủ",
+        "babymilk": "Sữa cho bé",
+        "blog": "Bài viết",
+        "diaper": "Tả & bỉm",
+        "nutritionalfood": "Thực phẩm dinh dưỡng",
+        "accessories": "Đồ dùng mẹ & bé"
+    },
+    "homesidebar": {
+        "menu": "Danh mục",
+        "buybybrands": "Thương hiệu",
+        "bestseller": "Sản phẩm bán chạy",
+        "search": "Tìm kiếm"
+    },
+    "homeheadertop": {
+        "topads": "Miễn phí vận chuyển cho đơn hàng đầu tiên."
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

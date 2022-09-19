@@ -1,4 +1,21 @@
 {
+    "homeheader": {
+        "home": "Home",
+        "babymilk": "Baby's milk",
+        "blog": "Blog",
+        "diaper": "Diaper",
+        "nutritionalfood": "Nutritional food",
+        "accessories": "Accessories"
+    },
+    "homesidebar": {
+        "menu": "Menu",
+        "buybybrands": "Buy by brands",
+        "bestseller": "Best seller",
+        "search": "Search products"
+    },
+    "homeheadertop": {
+        "topads": "Free shipping for fist order."
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
