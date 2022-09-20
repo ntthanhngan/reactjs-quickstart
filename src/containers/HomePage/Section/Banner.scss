@@ -1,0 +1,45 @@
+.slide-container{
+    height: 70vh;
+
+    .slick-slider{
+        height: 70vh;
+        background-color: rgb(204, 84, 47);
+
+        .slick-prev, .slick-next{
+        padding-top: 1px;
+        z-index: 99;
+
+            ::before{
+                opacity: 1.75;
+                color: #23b0e7;
+            }
+
+            &:hover{
+                color: #9ec9da;
+            }
+            &.slick-prev{
+                left: 10px;
+            }
+            &.slick-next{
+                right: 10px;
+            }
+        }
+        
+
+        
+        .slide-list{
+            .slide-items{
+                height: 70vh;
+
+                img{
+                    height: 438px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.track-horizontal{
+    position: relative;
+}

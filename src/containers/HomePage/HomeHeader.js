@@ -8,6 +8,7 @@ import flagVN from '../../assets/images/vietnam-flag-icon.png'
 import flagEN from '../../assets/images/usa-flag-icon.png'
 import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions';
+import Banner from './Section/Banner';
 
 class HomeHeader extends Component {
 
@@ -125,7 +126,7 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                     <div className='banner'>
-
+                        <Banner />
                     </div>
                 </div>
             </div >
