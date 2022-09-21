@@ -1,19 +1,20 @@
 
-.header-container{
-    background-color: #000;
+.home-header-container{
     display: flex;
     flex-direction: column;
     font-size: larger;
 
     .header-top{
+        background-color: #000;
+        color: white;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 25px;
-        margin: 5px 10px 10px;
+        height: 36px;
         font-size: 13px;
         z-index: 99;
+        padding: 0 10px;
 
         .phoneNo-shop{
             .phone-icon{
@@ -41,8 +42,7 @@
 
             .language-switch{
                 display: flex;
-                align-items: revert;
-                height: inherit;
+                align-items: center;
                 border-left: 1px solid #242424;
                 text-align: center;
 

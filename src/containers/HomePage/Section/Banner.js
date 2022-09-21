@@ -8,7 +8,8 @@ import slide4 from '../../../assets/images/slide4.webp'
 import slide5 from '../../../assets/images/slide5.webp'
 import slide7 from '../../../assets/images/slide7.webp'
 import slide10 from '../../../assets/images/slide10.webp'
-import './Banner.scss'
+import "./Banner.scss"
+
 
 class Banner extends Component {
     constructor(props) {

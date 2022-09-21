@@ -9,9 +9,9 @@
         padding-top: 1px;
         z-index: 99;
 
-            ::before{
-                opacity: 1.75;
-                color: #23b0e7;
+            &::before{
+                opacity: 1.75!important;
+                color: #23b0e7!important;
             }
 
             &:hover{
@@ -24,22 +24,14 @@
                 right: 10px;
             }
         }
-        
-
-        
+        img{
+            height: 438px;
+            width: 100%;
+        }
         .slide-list{
             .slide-items{
                 height: 70vh;
-
-                img{
-                    height: 438px;
-                    width: 100%;
-                }
             }
         }
     }
-}
-
-.track-horizontal{
-    position: relative;
 }

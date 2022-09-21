@@ -19,7 +19,7 @@ class HomeHeader extends Component {
         let language = this.props.language
         console.log('check props', this.props)
         return (
-            <div className='header-container'>
+            <div className='home-header-container'>
                 <div className='header-top'>
                     <div className='phoneNo-shop'>
                         <FontAwesomeIcon icon='phone' className='phone-icon' />

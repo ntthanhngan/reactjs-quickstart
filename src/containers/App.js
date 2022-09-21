@@ -20,7 +20,6 @@ import { path } from '../utils'
 
 import Home from '../routes/Home';
 import Login from '../containers/Auth/Login';
-import Header from './Header/Header';
 import System from '../routes/System';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
@@ -57,8 +56,6 @@ class App extends Component {
             <>
                 <Router history={history}>
                     <div className="main-container">
-                        {this.props.isLoggedIn && <Header />}
-
                         <div className="content-container">
                             <Switch>
                                 <Route path={path.HOME} exact component={(Home)} />
