@@ -9,6 +9,8 @@ import { LANGUAGES } from '../../utils';
 import './Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { changeLanguageApp } from '../../store/actions';
+import { FormattedMessage } from 'react-intl';
+
 
 class Header extends Component {
 
@@ -17,7 +19,7 @@ class Header extends Component {
     }
 
     render() {
-        const { processLogout, language } = this.props;
+        const { processLogout, language, userInfo } = this.props;
 
         return (
             <div className="header-container">
@@ -25,7 +27,13 @@ class Header extends Component {
                 <div className="header-tabs-container">
                     <Navigator menus={adminMenu} />
                 </div>
+
+
                 <div className='header-end'>
+                    <div className='welcome-user-name'>
+                        <FormattedMessage id='homeheader.welcome' />
+                        {userInfo && userInfo.firstName ? userInfo.firstName : ''}
+                    </div>
                     <div className='language-switch'>
                         <span type="button"
                             onClick={() => this.handleChangeLanguage(LANGUAGES.VI)}
@@ -57,6 +65,7 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo
     };
 };
 

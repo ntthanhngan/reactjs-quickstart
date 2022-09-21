@@ -1,0 +1,37 @@
+.text-center{
+    font-weight: bold;
+    color: #0089ff;
+    h4{
+        font-size: 3.5rem;
+    }
+}
+.redux-container{
+    background: linear-gradient(to right top, #65dfc9, #6cdbed);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-card{
+        background: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+        width: 40%;
+        height: 70vh;
+        border-radius: 20px;
+        
+        .form-include{
+            height: inherit;
+            margin: auto 20px 20px;
+
+            .form-content{
+                margin: auto 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .last-child{
+                    text-align: end;
+                }
+            }
+        }
+    }
+}

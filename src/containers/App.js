@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-    faPen, faTrash, faRightFromBracket,
+    faPen, faTrash, faRightFromBracket, faCirclePlus,
     faPlus, faEnvelope, faPhone, faMagnifyingGlass,
     faHeart, faCartShopping, faBars, faUser, faSearch
 } from '@fortawesome/free-solid-svg-icons'
@@ -26,7 +26,7 @@ import { CustomToastCloseButton } from '../components/CustomToast';
 import HomePage from './HomePage/HomePage'
 
 library.add(
-    faPen, faTrash, faRightFromBracket, faPlus,
+    faPen, faTrash, faRightFromBracket, faPlus, faCirclePlus,
     faEnvelope, faPhone, faHeart, faCartShopping,
     faFacebook, faTwitter, faMagnifyingGlass, faBars, faUser, faSearch
 );

@@ -123,16 +123,7 @@ class UserManage extends Component {
                     />
                 }
                 <div className="text-center title">Manage users with react</div>
-                <div className='add-user mx-2'>
-                    <button className='btn btn-primary'
-                        onClick={() => this.handleAddUser()}
-                    >
-                        <span>
-                            <FontAwesomeIcon icon='plus' className='me-2' />
-                        </span>
-                        Add new user
-                    </button>
-                </div>
+
                 <div className='user-table mt-3 mx-2'>
                     <table id="customers">
                         <thead>
@@ -154,6 +145,9 @@ class UserManage extends Component {
                                             <td>{item.email}</td>
                                             <td>{item.address}</td>
                                             <td>
+                                                <button className='add-btn' onClick={() => this.handleAddUser()}>
+                                                    <FontAwesomeIcon icon="fa-solid fa-circle-plus" />
+                                                </button>
                                                 <button className='edit-btn' onClick={() => this.handleEditUser(item)}>
                                                     <FontAwesomeIcon icon="pen" />
                                                 </button>
